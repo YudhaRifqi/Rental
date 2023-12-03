@@ -22,6 +22,8 @@ type
     procedure DataMerk1Click(Sender: TObject);
     procedure DataKaryawan1Click(Sender: TObject);
     procedure Login1Click(Sender: TObject);
+    procedure Keluar1Click(Sender: TObject);
+    procedure Logout1Click(Sender: TObject);
   private
     { Private declarations }
   public
@@ -56,6 +58,23 @@ end;
 procedure TForm3.Login1Click(Sender: TObject);
 begin
 Form5.Show;
+end;
+
+procedure TForm3.Keluar1Click(Sender: TObject);
+begin
+if Application.MessageBox('Benarkah Anda Akan Keluar Dari Aplikasi?', 'Konfirmasi', 4+32)=6
+then Application.Terminate;
+end;
+
+procedure TForm3.Logout1Click(Sender: TObject);
+begin
+if MessageDlg('Logout?', mtConfirmation, [mbYes, mbNo], 0) = mrYes then
+begin
+  Form3.Data1.Enabled := false;
+  Form3.Laporan1.Enabled := false;
+  Form3.logout1.Enabled := false;
+  Form3.Login1.Enabled := true;
+end;
 end;
 
 end.

@@ -26,13 +26,17 @@ object Form3: TForm3
       end
       object Logout1: TMenuItem
         Caption = 'Logout'
+        Enabled = False
+        OnClick = Logout1Click
       end
       object Keluar1: TMenuItem
         Caption = 'Keluar'
+        OnClick = Keluar1Click
       end
     end
     object Data1: TMenuItem
       Caption = 'Data'
+      Enabled = False
       object DataMobil2: TMenuItem
         Caption = 'Data Pelanggan'
         OnClick = DataMobil2Click
@@ -48,6 +52,7 @@ object Form3: TForm3
     end
     object Laporan1: TMenuItem
       Caption = 'Laporan'
+      Enabled = False
     end
   end
 end

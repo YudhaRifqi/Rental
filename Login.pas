@@ -39,9 +39,8 @@ uses
 procedure TForm5.btn1Click(Sender: TObject);
 var
   username, password: string;
-  zqry1: TZQuery;
 begin
-    if edt1.text = '' then
+  if edt1.text = '' then
     begin
     MessageDlg('Kolom username harus diisi', mtInformation, [mbOK], 0);
     end else
@@ -59,7 +58,7 @@ begin
     zqry1.Connection := Form5.con1;
 
     // Mengeksekusi query untuk memeriksa username dan password
-    zqry1.SQL.Text := 'SELECT COUNT(*) FROM user WHERE username = :username AND password = :password';
+    zqry1.SQL.Text := 'SELECT COUNT(*) FROM user WHERE username = :username AND password = MD5(:password)';
     zqry1.ParamByName('username').AsString := username;
     zqry1.ParamByName('password').AsString := password;
     zqry1.Open;
@@ -69,10 +68,10 @@ begin
     begin
       // Jika ada record dengan username dan password yang sesuai, login berhasil
       ShowMessage('Login berhasil!');
-//      Form1.Data1.Enabled := true;
-//      Form1.Menu1.Enabled := true;
-//      Form1.Logout1.Enabled := true;
-//      Form1.Login1.Enabled := false;
+      Form3.Data1.Enabled := true;
+      Form3.Laporan1.Enabled := true;
+      Form3.Logout1.Enabled := true;
+      Form3.Login1.Enabled := false;
       Form5.Close;
       // Tambahkan kode untuk membuka form utama atau aksi lainnya setelah login berhasil
     end
@@ -86,9 +85,7 @@ begin
       zqry1.Free;
     end;
     end;
-
 end;
-
 
 
 procedure TForm5.btn2Click(Sender: TObject);

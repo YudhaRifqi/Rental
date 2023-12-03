@@ -5,7 +5,7 @@ interface
 uses
   Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
   Dialogs, ZAbstractConnection, ZConnection, DB, ZAbstractRODataset,
-  ZAbstractDataset, ZDataset, StdCtrls;
+  ZAbstractDataset, ZDataset, StdCtrls, IdHashMessageDigest;
 
 type
   TForm6 = class(TForm)
@@ -35,9 +35,9 @@ implementation
 
 procedure TForm6.btn1Click(Sender: TObject);
 var
-  username:string;
+  username: string;
 begin
-    if edt1.text = '' then
+  if edt1.text = '' then
     begin
     MessageDlg('Kolom username harus diisi', mtInformation, [mbOK], 0);
     end else
