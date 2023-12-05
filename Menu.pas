@@ -18,12 +18,22 @@ type
     DataMobil2: TMenuItem;
     DataMerk1: TMenuItem;
     DataKaryawan1: TMenuItem;
+    DataMobil1: TMenuItem;
+    LaporanMerk1: TMenuItem;
+    LaporanKaryawan1: TMenuItem;
+    LaporanPelanggan1: TMenuItem;
+    LaporanMobil1: TMenuItem;
+    LaporanAkun1: TMenuItem;
     procedure DataMobil2Click(Sender: TObject);
     procedure DataMerk1Click(Sender: TObject);
     procedure DataKaryawan1Click(Sender: TObject);
     procedure Login1Click(Sender: TObject);
     procedure Keluar1Click(Sender: TObject);
     procedure Logout1Click(Sender: TObject);
+    procedure DataMobil1Click(Sender: TObject);
+    procedure LaporanMerk1Click(Sender: TObject);
+    procedure LaporanKaryawan1Click(Sender: TObject);
+    procedure LaporanAkun1Click(Sender: TObject);
   private
     { Private declarations }
   public
@@ -36,7 +46,7 @@ var
 implementation
 
 uses
-  Pelanggan, Merk, Karyawan, Login;
+  Pelanggan, Merk, Karyawan, Login, Mobil, Daftar;
 
 {$R *.dfm}
 
@@ -75,6 +85,26 @@ begin
   Form3.logout1.Enabled := false;
   Form3.Login1.Enabled := true;
 end;
+end;
+
+procedure TForm3.DataMobil1Click(Sender: TObject);
+begin
+Form7.Show;
+end;
+
+procedure TForm3.LaporanMerk1Click(Sender: TObject);
+begin
+Form1.frxReport1.ShowReport();
+end;
+
+procedure TForm3.LaporanKaryawan1Click(Sender: TObject);
+begin
+Form4.frxReport1.ShowReport();
+end;
+
+procedure TForm3.LaporanAkun1Click(Sender: TObject);
+begin
+Form6.frxReport1.ShowReport();
 end;
 
 end.

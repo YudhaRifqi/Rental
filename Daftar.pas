@@ -5,7 +5,8 @@ interface
 uses
   Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
   Dialogs, ZAbstractConnection, ZConnection, DB, ZAbstractRODataset,
-  ZAbstractDataset, ZDataset, StdCtrls, IdHashMessageDigest;
+  ZAbstractDataset, ZDataset, StdCtrls, IdHashMessageDigest, frxClass,
+  frxDBSet;
 
 type
   TForm6 = class(TForm)
@@ -18,6 +19,8 @@ type
     btn2: TButton;
     zqry1: TZQuery;
     con1: TZConnection;
+    frxReport1: TfrxReport;
+    frxDBDataset1: TfrxDBDataset;
     procedure btn1Click(Sender: TObject);
     procedure btn2Click(Sender: TObject);
   private

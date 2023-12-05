@@ -49,10 +49,32 @@ object Form3: TForm3
         Caption = 'Data Karyawan'
         OnClick = DataKaryawan1Click
       end
+      object DataMobil1: TMenuItem
+        Caption = 'Data Mobil'
+        OnClick = DataMobil1Click
+      end
     end
     object Laporan1: TMenuItem
       Caption = 'Laporan'
       Enabled = False
+      object LaporanMerk1: TMenuItem
+        Caption = 'Laporan Merk'
+        OnClick = LaporanMerk1Click
+      end
+      object LaporanKaryawan1: TMenuItem
+        Caption = 'Laporan Karyawan'
+        OnClick = LaporanKaryawan1Click
+      end
+      object LaporanPelanggan1: TMenuItem
+        Caption = 'Laporan Pelanggan'
+      end
+      object LaporanMobil1: TMenuItem
+        Caption = 'Laporan Mobil'
+      end
+      object LaporanAkun1: TMenuItem
+        Caption = 'Laporan Akun'
+        OnClick = LaporanAkun1Click
+      end
     end
   end
 end
