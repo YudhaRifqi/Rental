@@ -34,6 +34,8 @@ type
     procedure LaporanMerk1Click(Sender: TObject);
     procedure LaporanKaryawan1Click(Sender: TObject);
     procedure LaporanAkun1Click(Sender: TObject);
+    procedure LaporanPelanggan1Click(Sender: TObject);
+    procedure LaporanMobil1Click(Sender: TObject);
   private
     { Private declarations }
   public
@@ -105,6 +107,16 @@ end;
 procedure TForm3.LaporanAkun1Click(Sender: TObject);
 begin
 Form6.frxReport1.ShowReport();
+end;
+
+procedure TForm3.LaporanPelanggan1Click(Sender: TObject);
+begin
+Form2.frxReport1.ShowReport();
+end;
+
+procedure TForm3.LaporanMobil1Click(Sender: TObject);
+begin
+Form7.frxReport1.ShowReport();
 end;
 
 end.

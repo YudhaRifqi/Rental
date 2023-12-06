@@ -5,7 +5,7 @@ interface
 uses
   Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
   Dialogs, ZAbstractConnection, ZConnection, DB, ZAbstractRODataset,
-  ZAbstractDataset, ZDataset, Grids, DBGrids, StdCtrls;
+  ZAbstractDataset, ZDataset, Grids, DBGrids, StdCtrls, frxClass, frxDBSet;
 
 type
   TForm7 = class(TForm)
@@ -35,6 +35,8 @@ type
     edt5: TEdit;
     edt6: TEdit;
     lbl8: TLabel;
+    frxReport1: TfrxReport;
+    frxDBDataset1: TfrxDBDataset;
     procedure FormCreate(Sender: TObject);
     procedure btn2Click(Sender: TObject);
     procedure btn5Click(Sender: TObject);
@@ -87,9 +89,10 @@ begin
 merk.First;
 while not merk.Eof do
 begin
-  cbb1.Items.Add(merk.FieldByName('id').AsString);
+  cbb1.Items.add(merk.FieldByName('id').AsString);
   merk.Next;
 end;
+
 end;
 
 procedure TForm7.posisiawal;
@@ -178,7 +181,8 @@ end;
 procedure TForm7.cbb1Change(Sender: TObject);
 begin
 merk.Locate('id', StrToInt(cbb1.Text), []);
-  edt6.Text := merk.FieldByName('nama_merk').AsString;
+edt6.Text := merk.FieldByName('nama_merk').AsString;
+
 end;
 
 procedure TForm7.btn3Click(Sender: TObject);

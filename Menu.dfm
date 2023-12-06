@@ -67,9 +67,11 @@ object Form3: TForm3
       end
       object LaporanPelanggan1: TMenuItem
         Caption = 'Laporan Pelanggan'
+        OnClick = LaporanPelanggan1Click
       end
       object LaporanMobil1: TMenuItem
         Caption = 'Laporan Mobil'
+        OnClick = LaporanMobil1Click
       end
       object LaporanAkun1: TMenuItem
         Caption = 'Laporan Akun'

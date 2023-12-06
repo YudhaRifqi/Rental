@@ -5,7 +5,8 @@ interface
 uses
   Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
   Dialogs, StdCtrls, ComCtrls, Grids, DBGrids, DB, ZAbstractRODataset,
-  ZAbstractDataset, ZDataset, ZAbstractConnection, ZConnection;
+  ZAbstractDataset, ZDataset, ZAbstractConnection, ZConnection, frxClass,
+  frxDBSet;
 
 type
   TForm2 = class(TForm)
@@ -35,6 +36,8 @@ type
     ds1: TDataSource;
     zqry1: TZQuery;
     con1: TZConnection;
+    frxDBDataset1: TfrxDBDataset;
+    frxReport1: TfrxReport;
     procedure FormShow(Sender: TObject);
     procedure btn1Click(Sender: TObject);
     procedure btn5Click(Sender: TObject);
@@ -258,14 +261,14 @@ btn3.Enabled := true;
 btn4.Enabled := true;
 btn5.Enabled := true;
 id := zqry1.Fields[0].AsString;
-edt1.Text := zqry1.FieldByName('nik').AsString;
+edt1.Text := zqry1.fieldByName('nik').AsString;
 edt2.Text := zqry1.FieldByName('nama').AsString;
 edt3.Text := zqry1.FieldByName('alamat').AsString;
 edt4.Text := zqry1.FieldByName('tempat_lahir').AsString;
 dtp1.DateTime := zqry1.FieldByName('tgl_lahir').AsDateTime;
 cbb1.Text := zqry1.FieldByName('jk').AsString;
-edt5.Text := zqry1.FieldByName('tempat_lahir').AsString;
-edt6.Text := zqry1.FieldByName('alamat').AsString;
+edt5.Text := zqry1.FieldByName('email').AsString;
+edt6.Text := zqry1.FieldByName('telepon').AsString;
 end;
 
 end.
